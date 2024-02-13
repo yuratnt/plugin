@@ -1,0 +1,4 @@
+name: magic
+version: '${project.version}'
+main: tnt.org.magic.magic.Magic
+api-version: '1.20'

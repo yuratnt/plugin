@@ -1,0 +1,4 @@
+name: magic
+version: '1.0-SNAPSHOT'
+main: tnt.org.magic.magic.Magic
+api-version: '1.20'
