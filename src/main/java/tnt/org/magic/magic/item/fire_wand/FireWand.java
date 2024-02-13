@@ -3,21 +3,18 @@ package tnt.org.magic.magic.item.fire_wand;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
-import tnt.org.magic.magic.item.item_create;
+import tnt.org.magic.magic.item.ItemCreate;
 
-import java.awt.*;
 import java.util.Collections;
 
-public class fire_wand {
+public class FireWand {
 
     public static void init(){
         Recipe();
     }
-    public static ItemStack fire_wand = item_create.createItem(
+    public static ItemStack fire_wand = ItemCreate.createItem(
             Material.STICK,
             "§6Огненый жезл",
             Collections.singletonList("§7Поджигает врагов вокруг себя в радиусе 3 блоков, если в левой руке есть 1 огненый порошок")

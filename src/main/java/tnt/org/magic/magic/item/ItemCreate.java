@@ -6,7 +6,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
-public class item_create {
+public class ItemCreate {
 
     public static ItemStack createItem(
             Material material,

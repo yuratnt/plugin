@@ -5,13 +5,13 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
-import tnt.org.magic.magic.item.item_create;
+import tnt.org.magic.magic.item.ItemCreate;
 
 import java.util.Collections;
 
-public class withering_staff {
+public class WitheringStaff {
 
-    public static ItemStack withering_staff = item_create.createItem(
+    public static ItemStack withering_staff = ItemCreate.createItem(
             Material.STICK,
             "withering staff",
             Collections.singletonList("Lore")

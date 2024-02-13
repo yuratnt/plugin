@@ -1,6 +1,6 @@
+tnt\org\magic\magic\item\withering_staff\WitheringStaff.class
+tnt\org\magic\magic\item\fire_wand\FireWandEvent.class
+tnt\org\magic\magic\item\withering_staff\WitheringStaffEvent.class
 tnt\org\magic\magic\Magic.class
-tnt\org\magic\magic\item\fire_wand\fire_wand_event.class
-tnt\org\magic\magic\item\withering_staff\withering_staff.class
-tnt\org\magic\magic\item\withering_staff\withering_staff_event.class
-tnt\org\magic\magic\item\item_create.class
-tnt\org\magic\magic\item\fire_wand\fire_wand.class
+tnt\org\magic\magic\item\ItemCreate.class
+tnt\org\magic\magic\item\fire_wand\FireWand.class
