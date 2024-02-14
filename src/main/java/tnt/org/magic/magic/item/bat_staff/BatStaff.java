@@ -1,4 +1,4 @@
-package tnt.org.magic.magic.item.withering_staff;
+package tnt.org.magic.magic.item.bat_staff;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -9,11 +9,11 @@ import tnt.org.magic.magic.item.ItemCreate;
 
 import java.util.Collections;
 
-public class WitheringStaff {
+public class BatStaff {
 
     public static ItemStack withering_staff = ItemCreate.createItem(
             Material.STICK,
-            "withering staff",
+            "§4Вампирский посох",
             Collections.singletonList("Lore")
     );
 
@@ -26,12 +26,12 @@ public class WitheringStaff {
         ShapedRecipe shapedRecipe = new ShapedRecipe(NamespacedKey.minecraft("withering_staff"), withering_staff);
 
         shapedRecipe.shape(
-                " AH",
+                " AG",
                 " NA",
                 "B  "
         );
         shapedRecipe.setIngredient('A', Material.AMETHYST_SHARD);
-        shapedRecipe.setIngredient('H', Material.WITHER_SKELETON_SKULL);
+        shapedRecipe.setIngredient('G', Material.GOLD_BLOCK);
         shapedRecipe.setIngredient('N', Material.NETHERITE_INGOT);
         shapedRecipe.setIngredient('B', Material.BLAZE_ROD);
         Bukkit.getServer().addRecipe(shapedRecipe);

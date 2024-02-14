@@ -1,5 +1,8 @@
-package tnt.org.magic.magic.item.withering_staff;
+package tnt.org.magic.magic.item.bat_staff;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.*;
@@ -10,7 +13,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class WitheringStaffEvent implements Listener {
+import javax.swing.border.TitledBorder;
+
+public class BatStaffEvent implements Listener {
 
     private Location location;
     private World world;
@@ -20,7 +25,7 @@ public class WitheringStaffEvent implements Listener {
     public void onInteract(PlayerInteractEvent event) {
         if (event.getItem() == null) return;
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
-            if (event.getItem().getItemMeta().equals(WitheringStaff.withering_staff.getItemMeta())) {
+            if (event.getItem().getItemMeta().equals(BatStaff.withering_staff.getItemMeta())) {
 
                 location = event.getPlayer().getLocation();
                 world = event.getPlayer().getWorld();
@@ -57,6 +62,8 @@ public class WitheringStaffEvent implements Listener {
         player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, time, 0));
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, time, 1));
         player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, time, 1));
+
+        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("test"));
 
     }
 }

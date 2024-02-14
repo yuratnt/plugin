@@ -6,6 +6,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import tnt.org.magic.magic.item.ItemCreate;
+import tnt.org.magic.magic.mechanic.mana.Mana;
 
 import java.util.Collections;
 
