@@ -29,7 +29,6 @@ public class ManaEvent implements Listener {
         playerConfig.set("manaRegen", 5);
 
         try {
-
             playerConfig.save("magic/player/" + player.getUniqueId() + ".yml");
         } catch (IOException e) {
             e.printStackTrace();
