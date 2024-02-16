@@ -1,8 +1,10 @@
-tnt\org\magic\magic\item\bat_staff\BatStaffEvent.class
-tnt\org\magic\magic\item\fire_wand\FireWandEvent.class
+tnt\org\magic\magic\item\staff\fire_wand\FireWand.class
+tnt\org\magic\magic\mechanic\mana\ManaEvent$1.class
 tnt\org\magic\magic\mechanic\mana\Mana.class
 tnt\org\magic\magic\Magic.class
-tnt\org\magic\magic\item\bat_staff\BatStaff.class
+tnt\org\magic\magic\item\staff\Staff.class
 tnt\org\magic\magic\item\ItemCreate.class
 tnt\org\magic\magic\mechanic\mana\ManaEvent.class
-tnt\org\magic\magic\item\fire_wand\FireWand.class
+tnt\org\magic\magic\item\staff\bat_staff\BatStaffEvent.class
+tnt\org\magic\magic\item\staff\fire_wand\FireWandEvent.class
+tnt\org\magic\magic\item\staff\bat_staff\BatStaff.class

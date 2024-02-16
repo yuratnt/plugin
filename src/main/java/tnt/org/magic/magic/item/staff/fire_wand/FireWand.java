@@ -1,4 +1,4 @@
-package tnt.org.magic.magic.item.fire_wand;
+package tnt.org.magic.magic.item.staff.fire_wand;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -6,19 +6,21 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import tnt.org.magic.magic.item.ItemCreate;
-
-import java.util.Collections;
+import tnt.org.magic.magic.item.staff.Staff;
 
 public class FireWand {
 
     public static void init(){
         Recipe();
     }
-    public static ItemStack fire_wand = ItemCreate.createItem(
-            Material.STICK,
-            "§6Огненый жезл",
-            Collections.singletonList("§7Поджигает врагов вокруг себя в радиусе 3 блоков, если в левой руке есть 1 огненый порошок")
+    public static ItemStack fire_wand = ItemCreate.createStaff(
+            Staff.FIRE_WAND.getMana(),
+            Staff.FIRE_WAND.getName(),
+            Staff.FIRE_WAND.getLore(),
+            Staff.FIRE_WAND.getMaterial(),
+            Staff.FIRE_WAND.getTag()
     );
+
 
     private static void Recipe() {
 

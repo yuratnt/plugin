@@ -1,8 +1,7 @@
-package tnt.org.magic.magic.item.bat_staff;
+package tnt.org.magic.magic.item.staff.bat_staff;
 
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.*;
@@ -12,8 +11,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-
-import javax.swing.border.TitledBorder;
 
 public class BatStaffEvent implements Listener {
 

@@ -1,9 +1,6 @@
-package tnt.org.magic.magic.item.fire_wand;
+package tnt.org.magic.magic.item.staff.fire_wand;
 
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Particle;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -11,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import tnt.org.magic.magic.item.staff.Staff;
 import tnt.org.magic.magic.mechanic.mana.Mana;
 
 public class FireWandEvent implements Listener {
@@ -24,16 +22,13 @@ public class FireWandEvent implements Listener {
         if (event.getItem() == null) return;
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK && event.getAction() != Action.RIGHT_CLICK_AIR) return;
         if (!event.getItem().getItemMeta().equals(FireWand.fire_wand.getItemMeta())) return;
+
         playerLocation = event.getPlayer().getLocation();
         playerWorld = event.getPlayer().getWorld();
         player = event.getPlayer();
 
-        if (!event.getPlayer().getInventory().getItemInOffHand().getType().equals(Material.BLAZE_POWDER)) return;
-
-        int amount = event.getPlayer().getInventory().getItemInOffHand().getAmount();
-        event.getPlayer().getInventory().getItemInOffHand().setAmount(amount - 1);
         createParticle();
-        }
+    }
     private void createParticle() {
         int cx = playerLocation.getBlockX();
         int cy = playerLocation.getBlockY();
