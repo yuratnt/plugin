@@ -1,5 +1,6 @@
 package tnt.org.magic.magic.mechanic.mana;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -16,17 +17,13 @@ import java.io.IOException;
 
 public class ManaEvent implements Listener {
 
-    private BukkitRunnable timer;
-
-    public Player player;
     @EventHandler
     public void onPlayerJoin (PlayerJoinEvent event) {
-        player = event.getPlayer();
-
+        Player player = event.getPlayer();
         File playerFile = new File("magic/player/" + player.getUniqueId() + ".yml");
 
         if (!playerFile.exists()) {
-            createConfig(playerFile);
+            createConfig(playerFile, player);
             manaRegen(player);
         }
         else {
@@ -34,7 +31,7 @@ public class ManaEvent implements Listener {
         }
     }
 
-    private void createConfig(File playerFile) {
+    private void createConfig(File playerFile, Player player) {
         YamlConfiguration playerConfig = new YamlConfiguration();
 
         playerConfig.set("name", player.getName());
@@ -53,26 +50,25 @@ public class ManaEvent implements Listener {
     }
     @EventHandler
     public void onPlayerQuit (PlayerQuitEvent event) {
-        System.out.println(event.getPlayer().getName() + " leave server");
-
         Player playerQuit = event.getPlayer();
 
         FileConfiguration config = Mana.loadConfig(playerQuit);
 
-        assert config != null;
-        int timerId = config.getInt("timerId");
+        int taskId = config.getInt("timerId");
 
-        if (timer.getTaskId() != timerId) return;
-        timer.cancel();
+        Bukkit.getScheduler().cancelTask(taskId);
     }
 
-    public void manaRegen(Player player) {
-        FileConfiguration config = Mana.loadConfig(player);
+    public static void manaRegen(Player player) {
 
-        timer = new BukkitRunnable() {
+
+        BukkitRunnable timer = new BukkitRunnable() {
             public void run() {
+                FileConfiguration config = Mana.loadConfig(player);
+
                 int id = getTaskId();
                 config.set("timerId", id);
+                Mana.saveConfig(player, config);
 
                 int mana = config.getInt("mana");
                 int manaMax = config.getInt("manaMax");

@@ -9,16 +9,16 @@ import java.util.List;
 public enum Staff {
 
     FIRE_WAND(
-            10,
-            "§6Огненый жезл",
-            "§7Поджигает врагов вокруг себя в радиусе 3 блоков, если в левой руке есть 1 огненый порошок",
+            30,
+            "§6§lОгненый жезл",
+            "§7Поджигает врагов вокруг себя в радиусе 3 блоков",
             Material.STICK,
             "fire_wand"),
 
     BAT_STAFF(
-            30,
-            "§4Вампирский посох",
-            "lore",
+            40,
+            "§4§lВампирский посох",
+            "§7Создаёт летучих мышей и накладывает: скорость 2, регенерацию 2 и невидимость",
             Material.STICK,
             "bat_staff");
 
@@ -51,8 +51,8 @@ public enum Staff {
         this.name = name;
     }
 
-    public List<String> getLore() {
-        return Collections.singletonList(lore);
+    public String getLore() {
+        return lore;
     }
     public void setLore(String lore) {
         this.lore = lore;

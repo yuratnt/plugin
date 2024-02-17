@@ -12,13 +12,7 @@ import java.util.Collections;
 
 public class BatStaff {
 
-    public static ItemStack withering_staff = ItemCreate.createStaff(
-            Staff.BAT_STAFF.getMana(),
-            Staff.BAT_STAFF.getName(),
-            Staff.BAT_STAFF.getLore(),
-            Staff.BAT_STAFF.getMaterial(),
-            Staff.BAT_STAFF.getTag()
-    );
+    public static ItemStack baf_staff = ItemCreate.createStaff(Staff.BAT_STAFF);
 
     public static void init() {
         Recipe();
@@ -26,7 +20,7 @@ public class BatStaff {
 
     private static void Recipe() {
 
-        ShapedRecipe shapedRecipe = new ShapedRecipe(NamespacedKey.minecraft("withering_staff"), withering_staff);
+        ShapedRecipe shapedRecipe = new ShapedRecipe(NamespacedKey.minecraft("withering_staff"), baf_staff);
 
         shapedRecipe.shape(
                 " AG",

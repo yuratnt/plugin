@@ -13,13 +13,7 @@ public class FireWand {
     public static void init(){
         Recipe();
     }
-    public static ItemStack fire_wand = ItemCreate.createStaff(
-            Staff.FIRE_WAND.getMana(),
-            Staff.FIRE_WAND.getName(),
-            Staff.FIRE_WAND.getLore(),
-            Staff.FIRE_WAND.getMaterial(),
-            Staff.FIRE_WAND.getTag()
-    );
+    public static ItemStack fire_wand = ItemCreate.createStaff(Staff.FIRE_WAND);
 
 
     private static void Recipe() {

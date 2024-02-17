@@ -27,6 +27,7 @@ public class FireWandEvent implements Listener {
         playerWorld = event.getPlayer().getWorld();
         player = event.getPlayer();
 
+        if (Mana.manaCast(Staff.FIRE_WAND, player)) return;
         createParticle();
     }
     private void createParticle() {
@@ -56,6 +57,5 @@ public class FireWandEvent implements Listener {
     private void createFire(Entity entity) {
         if (entity.equals(player)) return;
         entity.setFireTicks(200);
-        Mana.manaBar(player);
     }
 }

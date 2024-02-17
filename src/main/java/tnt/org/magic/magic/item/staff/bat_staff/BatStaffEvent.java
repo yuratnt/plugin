@@ -11,6 +11,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import tnt.org.magic.magic.item.staff.Staff;
+import tnt.org.magic.magic.mechanic.mana.Mana;
 
 public class BatStaffEvent implements Listener {
 
@@ -22,12 +24,13 @@ public class BatStaffEvent implements Listener {
     public void onInteract(PlayerInteractEvent event) {
         if (event.getItem() == null) return;
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
-            if (event.getItem().getItemMeta().equals(BatStaff.withering_staff.getItemMeta())) {
+            if (event.getItem().getItemMeta().equals(BatStaff.baf_staff.getItemMeta())) {
 
                 location = event.getPlayer().getLocation();
                 world = event.getPlayer().getWorld();
                 player = event.getPlayer();
 
+                if (Mana.manaCast(Staff.BAT_STAFF, player)) return;
                 spawn();
                 effect();
             }
@@ -59,8 +62,5 @@ public class BatStaffEvent implements Listener {
         player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, time, 0));
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, time, 1));
         player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, time, 1));
-
-        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("test"));
-
     }
 }

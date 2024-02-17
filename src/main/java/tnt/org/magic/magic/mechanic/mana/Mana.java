@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import tnt.org.magic.magic.Magic;
+import tnt.org.magic.magic.item.staff.Staff;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,5 +48,30 @@ public class Mana {
         String manaMax = config.getString("manaMax");
 
         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§9" +mana + "/" + manaMax));
+    }
+
+    public static boolean manaCast(Staff staff, Player player) {
+        FileConfiguration config = loadConfig(player);
+
+        int taskId = config.getInt("timerId");
+
+        Bukkit.getScheduler().cancelTask(taskId);
+
+        int mana = config.getInt("mana");
+        int manaCast = staff.getMana();
+
+        if (mana < manaCast) {
+            ManaEvent.manaRegen(player);
+            return true;
+        }
+        else {
+            int cast = mana - manaCast;
+
+            config.set("mana", cast);
+            saveConfig(player, config);
+
+            ManaEvent.manaRegen(player);
+            return false;
+        }
     }
 }
