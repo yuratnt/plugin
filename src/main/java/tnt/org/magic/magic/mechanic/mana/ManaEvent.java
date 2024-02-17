@@ -22,21 +22,15 @@ public class ManaEvent implements Listener {
     @EventHandler
     public void onPlayerJoin (PlayerJoinEvent event) {
         player = event.getPlayer();
-        int nameConfig = 0;
 
-        File playerFile = new File("magic/player/" + nameConfig + ".yml");
-
-        for (int i = 0;playerFile.exists(); i++) {
-            Mana.loadConfig(player);
-        }
+        File playerFile = new File("magic/player/" + player.getUniqueId() + ".yml");
 
         if (!playerFile.exists()) {
             createConfig(playerFile);
-            manaTimer(player);
-
+            manaRegen(player);
         }
         else {
-            manaTimer(player);
+            manaRegen(player);
         }
     }
 
@@ -48,7 +42,7 @@ public class ManaEvent implements Listener {
         playerConfig.set("level", 1);
         playerConfig.set("mana", 100);
         playerConfig.set("manaMax", 100);
-        playerConfig.set("manaRegen", 5);
+        playerConfig.set("manaRegen", 1);
         playerConfig.set("timerId", 0);
 
         try {
@@ -72,19 +66,29 @@ public class ManaEvent implements Listener {
         timer.cancel();
     }
 
-    public void manaTimer(Player player) {
+    public void manaRegen(Player player) {
         FileConfiguration config = Mana.loadConfig(player);
 
         timer = new BukkitRunnable() {
             public void run() {
                 int id = getTaskId();
                 config.set("timerId", id);
+
+                int mana = config.getInt("mana");
+                int manaMax = config.getInt("manaMax");
+                int manaRegen = config.getInt("manaRegen");
+                int regen = mana + manaRegen;
+
+                if (regen >= manaMax) {
+                    regen = manaMax;
+                }
+
+                config.set("mana", regen);
+
                 Mana.saveConfig(player, config);
-
-                Mana.manaRegen(player);
-
+                Mana.manaBar(player);
             }
         };
-        timer.runTaskTimer(Magic.getPlugin(Magic.class), 0, 100);
+        timer.runTaskTimer(Magic.getPlugin(Magic.class), 0, 20);
     }
 }

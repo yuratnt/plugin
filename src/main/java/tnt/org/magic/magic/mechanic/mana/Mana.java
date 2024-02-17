@@ -48,21 +48,4 @@ public class Mana {
 
         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§9" +mana + "/" + manaMax));
     }
-    public static void manaRegen(Player player) {
-        FileConfiguration config = loadConfig(player);
-
-        int mana = config.getInt("mana");
-        int manaMax = config.getInt("manaMax");
-        int manaRegen = config.getInt("manaRegen");
-
-        int regen = mana + manaRegen;
-
-        config.set("mana", regen);
-        saveConfig(player, config);
-
-        if (mana <= manaMax) return;
-        config.set("mana", manaMax);
-
-
-    }
 }
