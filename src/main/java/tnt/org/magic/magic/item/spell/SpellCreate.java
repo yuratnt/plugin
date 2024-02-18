@@ -1,19 +1,17 @@
-package tnt.org.magic.magic.item;
+package tnt.org.magic.magic.item.spell;
 
-import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
-import tnt.org.magic.magic.item.staff.Staff;
+import tnt.org.magic.magic.item.spell.Spell;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class ItemCreate {
+public class SpellCreate {
 
-    public static ItemStack createStaff(Staff staff)
+    public static ItemStack createStaff(Spell staff)
     {
 
         ItemStack item = new ItemStack(staff.getMaterial(), 1);
@@ -27,7 +25,7 @@ public class ItemCreate {
         meta.setDisplayName(staff.getName());
         meta.setLore(lore);
 
-        meta.getPersistentDataContainer().set(NamespacedKey.fromString("staff_name"), PersistentDataType.STRING, staff.getTag());
+        meta.getPersistentDataContainer().set(NamespacedKey.fromString("spell_name"), PersistentDataType.STRING, staff.getTag());
         meta.getPersistentDataContainer().set(NamespacedKey.fromString("mana_usage"), PersistentDataType.INTEGER, staff.getMana());
 
         item.setItemMeta(meta);

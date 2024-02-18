@@ -1,4 +1,4 @@
-package tnt.org.magic.magic.item.staff.fire_wand;
+package tnt.org.magic.magic.item.spell.fire_ring;
 
 import org.bukkit.*;
 import org.bukkit.entity.Entity;
@@ -8,10 +8,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import tnt.org.magic.magic.item.staff.Staff;
+import tnt.org.magic.magic.item.spell.Spell;
 import tnt.org.magic.magic.mechanic.mana.Mana;
 
-public class FireWandEvent implements Listener {
+public class FireRingEvent implements Listener {
 
     private Location playerLocation;
     private World playerWorld;
@@ -21,13 +21,13 @@ public class FireWandEvent implements Listener {
     public void onInteract(PlayerInteractEvent event) {
         if (event.getItem() == null) return;
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK && event.getAction() != Action.RIGHT_CLICK_AIR) return;
-        if (!event.getItem().getItemMeta().equals(FireWand.fire_wand.getItemMeta())) return;
+        if (!event.getItem().getItemMeta().equals(FireRing.fireRing.getItemMeta())) return;
 
         playerLocation = event.getPlayer().getLocation();
         playerWorld = event.getPlayer().getWorld();
         player = event.getPlayer();
 
-        if (Mana.manaCast(Staff.FIRE_WAND, player)) return;
+        if (Mana.manaCast(Spell.FIRE_WAND, player)) return;
         createParticle();
     }
     private void createParticle() {

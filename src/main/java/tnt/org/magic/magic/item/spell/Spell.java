@@ -1,12 +1,8 @@
-package tnt.org.magic.magic.item.staff;
+package tnt.org.magic.magic.item.spell;
 
 import org.bukkit.Material;
-import tnt.org.magic.magic.mechanic.mana.Mana;
 
-import java.util.Collections;
-import java.util.List;
-
-public enum Staff {
+public enum Spell {
 
     FIRE_WAND(
             30,
@@ -29,7 +25,7 @@ public enum Staff {
     private Material material;
     private String tag;
 
-    Staff(int mana, String name, String lore, Material material, String tag) {
+    Spell(int mana, String name, String lore, Material material, String tag) {
         this.mana = mana;
         this.name = name;
         this.lore = lore;

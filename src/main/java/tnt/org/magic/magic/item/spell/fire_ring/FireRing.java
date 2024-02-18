@@ -1,24 +1,26 @@
-package tnt.org.magic.magic.item.staff.fire_wand;
+package tnt.org.magic.magic.item.spell.fire_ring;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
-import tnt.org.magic.magic.item.ItemCreate;
-import tnt.org.magic.magic.item.staff.Staff;
+import tnt.org.magic.magic.item.spell.SpellCreate;
+import tnt.org.magic.magic.item.spell.Spell;
 
-public class FireWand {
+public class FireRing {
+
+    private static final Spell spell = Spell.FIRE_WAND;
 
     public static void init(){
-        Recipe();
+        recipe();
     }
-    public static ItemStack fire_wand = ItemCreate.createStaff(Staff.FIRE_WAND);
+    public static ItemStack fireRing = SpellCreate.createStaff(spell);
 
 
-    private static void Recipe() {
+    private static void recipe() {
 
-        ShapedRecipe shapedRecipe = new ShapedRecipe(NamespacedKey.minecraft("fire_wand"), fire_wand);
+        ShapedRecipe shapedRecipe = new ShapedRecipe(NamespacedKey.minecraft(spell.getTag()), fireRing);
 
         shapedRecipe.shape(
                 "  F",
@@ -27,6 +29,7 @@ public class FireWand {
         );
         shapedRecipe.setIngredient('F', Material.FIRE_CHARGE);
         shapedRecipe.setIngredient('B', Material.BLAZE_ROD);
+
         Bukkit.getServer().addRecipe(shapedRecipe);
     }
 }

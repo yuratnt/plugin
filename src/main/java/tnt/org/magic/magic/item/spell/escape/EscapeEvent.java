@@ -1,7 +1,5 @@
-package tnt.org.magic.magic.item.staff.bat_staff;
+package tnt.org.magic.magic.item.spell.escape;
 
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.*;
@@ -11,10 +9,10 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import tnt.org.magic.magic.item.staff.Staff;
+import tnt.org.magic.magic.item.spell.Spell;
 import tnt.org.magic.magic.mechanic.mana.Mana;
 
-public class BatStaffEvent implements Listener {
+public class EscapeEvent implements Listener {
 
     private Location location;
     private World world;
@@ -24,13 +22,13 @@ public class BatStaffEvent implements Listener {
     public void onInteract(PlayerInteractEvent event) {
         if (event.getItem() == null) return;
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
-            if (event.getItem().getItemMeta().equals(BatStaff.baf_staff.getItemMeta())) {
+            if (event.getItem().getItemMeta().equals(Escape.escape.getItemMeta())) {
 
                 location = event.getPlayer().getLocation();
                 world = event.getPlayer().getWorld();
                 player = event.getPlayer();
 
-                if (Mana.manaCast(Staff.BAT_STAFF, player)) return;
+                if (Mana.manaCast(Spell.BAT_STAFF, player)) return;
                 spawn();
                 effect();
             }
