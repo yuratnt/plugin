@@ -23,12 +23,14 @@ public class WandCreate {
         meta.setDisplayName(wand.getName());
         meta.setLore(lore);
 
-        meta.getPersistentDataContainer().set(NamespacedKey.fromString("wand_name"), PersistentDataType.STRING, wand.getTag());
+        meta.getPersistentDataContainer().set(NamespacedKey.fromString("tag"), PersistentDataType.STRING, wand.getTag());
+        meta.getPersistentDataContainer().set(NamespacedKey.fromString("select_slot"), PersistentDataType.STRING, "");
+
+        for (int i = 0; i != wand.getSlotCount(); i++) {
+            meta.getPersistentDataContainer().set(NamespacedKey.fromString("slot_" + i), PersistentDataType.STRING, "");
+        }
 
         item.setItemMeta(meta);
-
         return item;
     }
-
-
 }

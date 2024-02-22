@@ -1,5 +1,6 @@
 package tnt.org.magic.magic.item.wand.advanced_wand;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -30,5 +31,6 @@ public class AdvancedWand {
         shapedRecipe.setIngredient('B', Material.BONE);
         shapedRecipe.setIngredient('E', Material.EMERALD);
 
+        Bukkit.getServer().addRecipe(shapedRecipe);
     }
 }

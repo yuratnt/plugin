@@ -7,6 +7,8 @@ import tnt.org.magic.magic.item.spell.fire_ring.FireRingEvent;
 
 import tnt.org.magic.magic.item.spell.escape.Escape;
 import tnt.org.magic.magic.item.spell.escape.EscapeEvent;
+import tnt.org.magic.magic.inventory.wand.WandInventory;
+import tnt.org.magic.magic.inventory.wand.WandInventoryEvent;
 import tnt.org.magic.magic.item.wand.MasterWand.MasterWand;
 import tnt.org.magic.magic.item.wand.advanced_wand.AdvancedWand;
 import tnt.org.magic.magic.item.wand.begin_wand.BeginWand;
@@ -21,6 +23,9 @@ public final class Magic extends JavaPlugin {
 
         Mana.init();
         Bukkit.getPluginManager().registerEvents(new ManaEvent(), this);
+
+        WandInventory.init();
+        Bukkit.getPluginManager().registerEvents(new WandInventoryEvent(), this);
 
         BeginWand.init();
 
