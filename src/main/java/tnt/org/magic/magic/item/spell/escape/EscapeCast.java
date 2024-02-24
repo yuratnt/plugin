@@ -12,29 +12,17 @@ import org.bukkit.potion.PotionEffectType;
 import tnt.org.magic.magic.item.spell.Spell;
 import tnt.org.magic.magic.mechanic.mana.Mana;
 
-public class EscapeEvent implements Listener {
+public class EscapeCast{
 
-    private Location location;
-    private World world;
-    private Player player;
+    public static void escapeCast(Player player) {
+        if (Mana.manaCast(Spell.BAT_STAFF, player)) return;
+        spawn(player);
+        effect(player);
 
-    @EventHandler
-    public void onInteract(PlayerInteractEvent event) {
-        if (event.getItem() == null) return;
-        if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
-            if (event.getItem().getItemMeta().equals(Escape.escape.getItemMeta())) {
-
-                location = event.getPlayer().getLocation();
-                world = event.getPlayer().getWorld();
-                player = event.getPlayer();
-
-                if (Mana.manaCast(Spell.BAT_STAFF, player)) return;
-                spawn();
-                effect();
-            }
-        }
     }
-    private void spawn() {
+    private static void spawn(Player player) {
+        World world = player.getWorld();
+        Location location = player.getLocation();
 
         int x = location.getBlockX();
         int y = location.getBlockY();
@@ -55,7 +43,7 @@ public class EscapeEvent implements Listener {
             world.spawnEntity(fourPos, bat);
         }
     }
-    private void effect() {
+    private static void effect(Player player) {
         int time = 600;
         player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, time, 0));
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, time, 1));

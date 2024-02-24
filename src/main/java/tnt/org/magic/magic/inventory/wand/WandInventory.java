@@ -13,17 +13,17 @@ import tnt.org.magic.magic.item.inventory_filler.Filler;
 import tnt.org.magic.magic.item.inventory_filler.FillerCreate;
 import tnt.org.magic.magic.item.wand.Wand;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class WandInventory {
+
+    public static ItemStack filler = FillerCreate.createFiller(Filler.BLACK_GLASS_PANE);
 
     public static void init() {
 
     }
 
-    public static void wandDeterminant(Player player, ItemMeta meta) {
-
+    public static Wand wandDeterminant(ItemMeta meta) {
+        if (meta.getPersistentDataContainer().get(NamespacedKey.fromString("tag"), PersistentDataType.STRING) == null) return null;
         String tag = meta.getPersistentDataContainer().get(NamespacedKey.fromString("tag"), PersistentDataType.STRING);
         Wand wand = null;
 
@@ -36,12 +36,16 @@ public class WandInventory {
         else if (Wand.MASTER_WAND.getTag().equals(tag)) {
             wand = Wand.MASTER_WAND;
         }
+        return wand;
 
-        createInventory(wand, player);
+
+
+
     }
-    private static void createInventory(Wand wand, Player player) {
+    public static void createInventory(Wand wand, Player player) {
+        if (wand == null) return;
+
         Inventory inventory = Bukkit.getServer().createInventory(player, 9, wand.getName());
-        ItemStack filler = FillerCreate.createFiller(Filler.BLACK_GLASS_PANE);
 
         int slotCount = (9 - wand.getSlotCount()) / 2;
 

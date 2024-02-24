@@ -9,14 +9,14 @@ public enum Spell {
             "§6§lОгненый жезл",
             "§7Поджигает врагов вокруг себя в радиусе 3 блоков",
             Material.STICK,
-            "fire_wand"),
+            "fire_ring"),
 
     BAT_STAFF(
             40,
             "§4§lВампирский посох",
             "§7Создаёт летучих мышей и накладывает: скорость 2, регенерацию 2 и невидимость",
             Material.STICK,
-            "bat_staff");
+            "escape");
 
 
     private int mana;

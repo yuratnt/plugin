@@ -6,12 +6,15 @@ import tnt.org.magic.magic.item.spell.fire_ring.FireRing;
 import tnt.org.magic.magic.item.spell.fire_ring.FireRingEvent;
 
 import tnt.org.magic.magic.item.spell.escape.Escape;
-import tnt.org.magic.magic.item.spell.escape.EscapeEvent;
+import tnt.org.magic.magic.item.spell.escape.EscapeCast;
 import tnt.org.magic.magic.inventory.wand.WandInventory;
 import tnt.org.magic.magic.inventory.wand.WandInventoryEvent;
 import tnt.org.magic.magic.item.wand.MasterWand.MasterWand;
+import tnt.org.magic.magic.item.wand.MasterWand.MasterWandEvent;
 import tnt.org.magic.magic.item.wand.advanced_wand.AdvancedWand;
+import tnt.org.magic.magic.item.wand.advanced_wand.AdvancedWandEvent;
 import tnt.org.magic.magic.item.wand.begin_wand.BeginWand;
+import tnt.org.magic.magic.item.wand.begin_wand.BeginWandEvent;
 import tnt.org.magic.magic.mechanic.mana.Mana;
 import tnt.org.magic.magic.mechanic.mana.ManaEvent;
 
@@ -23,6 +26,12 @@ public final class Magic extends JavaPlugin {
 
         Mana.init();
         Bukkit.getPluginManager().registerEvents(new ManaEvent(), this);
+
+        Bukkit.getPluginManager().registerEvents(new BeginWandEvent(), this);
+
+        Bukkit.getPluginManager().registerEvents(new AdvancedWandEvent(), this);
+
+        Bukkit.getPluginManager().registerEvents(new MasterWandEvent(), this);
 
         WandInventory.init();
         Bukkit.getPluginManager().registerEvents(new WandInventoryEvent(), this);
@@ -37,7 +46,6 @@ public final class Magic extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new FireRingEvent(), this);
 
         Escape.init();
-        Bukkit.getPluginManager().registerEvents(new EscapeEvent(), this);
 
     }
 

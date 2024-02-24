@@ -24,10 +24,10 @@ public class WandCreate {
         meta.setLore(lore);
 
         meta.getPersistentDataContainer().set(NamespacedKey.fromString("tag"), PersistentDataType.STRING, wand.getTag());
-        meta.getPersistentDataContainer().set(NamespacedKey.fromString("select_slot"), PersistentDataType.STRING, "");
+        meta.getPersistentDataContainer().set(NamespacedKey.fromString("select_slot"), PersistentDataType.STRING, "none");
 
         for (int i = 0; i != wand.getSlotCount(); i++) {
-            meta.getPersistentDataContainer().set(NamespacedKey.fromString("slot_" + i), PersistentDataType.STRING, "");
+            meta.getPersistentDataContainer().set(NamespacedKey.fromString("slot_" + i), PersistentDataType.STRING, "none");
         }
 
         item.setItemMeta(meta);
