@@ -1,4 +1,3 @@
-tnt\org\magic\magic\item\spell\fire_ring\FireRingEvent.class
 tnt\org\magic\magic\item\spell\Spell.class
 tnt\org\magic\magic\mechanic\mana\ManaEvent$1.class
 tnt\org\magic\magic\mechanic\mana\Mana.class
@@ -7,6 +6,7 @@ tnt\org\magic\magic\Magic.class
 tnt\org\magic\magic\item\wand\MasterWand\MasterWandEvent.class
 tnt\org\magic\magic\item\spell\escape\Escape.class
 tnt\org\magic\magic\item\spell\escape\EscapeCast.class
+tnt\org\magic\magic\item\spell\fire_ring\FireRingCast.class
 tnt\org\magic\magic\item\wand\MasterWand\MasterWand.class
 tnt\org\magic\magic\item\wand\begin_wand\BeginWand.class
 tnt\org\magic\magic\item\wand\advanced_wand\AdvancedWandEvent.class

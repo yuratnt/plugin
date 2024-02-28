@@ -11,26 +11,14 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import tnt.org.magic.magic.item.spell.Spell;
 import tnt.org.magic.magic.mechanic.mana.Mana;
 
-public class FireRingEvent implements Listener {
+public class FireRingCast {
 
-    private Location playerLocation;
-    private World playerWorld;
-    private Player player;
-
-    @EventHandler
-    public void onInteract(PlayerInteractEvent event) {
-        if (event.getItem() == null) return;
-        if (event.getAction() != Action.RIGHT_CLICK_BLOCK && event.getAction() != Action.RIGHT_CLICK_AIR) return;
-        if (!event.getItem().getItemMeta().equals(FireRing.fireRing.getItemMeta())) return;
-
-        playerLocation = event.getPlayer().getLocation();
-        playerWorld = event.getPlayer().getWorld();
-        player = event.getPlayer();
-
+    public static void fireRingCast(Player player) {
         if (Mana.manaCast(Spell.FIRE_WAND, player)) return;
-        createParticle();
-    }
-    private void createParticle() {
+
+        Location playerLocation = player.getLocation();
+        World playerWorld = player.getWorld();
+
         int cx = playerLocation.getBlockX();
         int cy = playerLocation.getBlockY();
         int cz = playerLocation.getBlockZ();
@@ -47,14 +35,14 @@ public class FireRingEvent implements Listener {
                     for (Entity entity : Location.getWorld().getEntities()) {
                         if (entity instanceof LivingEntity && Location.distance(entity.getLocation()) <= radius) {
 
-                            createFire(entity);
+                            createFire(entity, player);
                         }
                     }
                 }
             }
         }
     }
-    private void createFire(Entity entity) {
+    private static void createFire(Entity entity, Player player) {
         if (entity.equals(player)) return;
         entity.setFireTicks(200);
     }

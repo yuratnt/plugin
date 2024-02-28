@@ -3,10 +3,9 @@ package tnt.org.magic.magic;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import tnt.org.magic.magic.item.spell.fire_ring.FireRing;
-import tnt.org.magic.magic.item.spell.fire_ring.FireRingEvent;
+import tnt.org.magic.magic.item.spell.fire_ring.FireRingCast;
 
 import tnt.org.magic.magic.item.spell.escape.Escape;
-import tnt.org.magic.magic.item.spell.escape.EscapeCast;
 import tnt.org.magic.magic.inventory.wand.WandInventory;
 import tnt.org.magic.magic.inventory.wand.WandInventoryEvent;
 import tnt.org.magic.magic.item.wand.MasterWand.MasterWand;
@@ -43,7 +42,6 @@ public final class Magic extends JavaPlugin {
         MasterWand.init();
 
         FireRing.init();
-        Bukkit.getPluginManager().registerEvents(new FireRingEvent(), this);
 
         Escape.init();
 

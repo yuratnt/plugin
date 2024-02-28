@@ -27,6 +27,7 @@ public class SpellCreate {
 
         meta.getPersistentDataContainer().set(NamespacedKey.fromString("tag"), PersistentDataType.STRING, staff.getTag());
         meta.getPersistentDataContainer().set(NamespacedKey.fromString("mana_usage"), PersistentDataType.INTEGER, staff.getMana());
+        meta.getPersistentDataContainer().set(NamespacedKey.fromString("spell"), PersistentDataType.STRING, "spell");
 
         item.setItemMeta(meta);
 

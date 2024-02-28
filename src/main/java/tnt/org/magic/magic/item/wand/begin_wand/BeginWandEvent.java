@@ -13,12 +13,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import tnt.org.magic.magic.item.spell.escape.EscapeCast;
+import tnt.org.magic.magic.item.spell.fire_ring.FireRingCast;
 import tnt.org.magic.magic.item.wand.Wand;
 
 public class BeginWandEvent implements Listener {
 
     @EventHandler
     public void spellCast(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
         if (event.getItem() == null) return;
 
         ItemMeta meta = event.getItem().getItemMeta();
@@ -36,10 +38,10 @@ public class BeginWandEvent implements Listener {
 
             switch (spell) {
                 case "fire_ring":
-                    EscapeCast.escapeCast(event.getPlayer());
+                    FireRingCast.fireRingCast(player);
                     break;
                 case "escape":
-
+                    EscapeCast.escapeCast(player);
                     break;
             }
         }

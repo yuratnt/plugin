@@ -1,6 +1,8 @@
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\spell\escape\Escape.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\spell\SpellCreate.java
+C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\spell\escape\EscapeCast.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\spell\fire_ring\FireRing.java
+C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\wand\begin_wand\BeginWandEvent.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\wand\WandCreate.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\wand\Wand.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\mechanic\mana\ManaEvent.java
@@ -8,6 +10,7 @@ C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\inventory\wa
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\spell\Spell.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\mechanic\mana\Mana.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\wand\advanced_wand\AdvancedWand.java
+C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\wand\advanced_wand\AdvancedWandEvent.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\wand\MasterWand\MasterWand.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\inventory_filler\Filler.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\inventory_filler\FillerCreate.java
@@ -15,4 +18,4 @@ C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\wand\be
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\inventory\wand\WandInventory.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\spell\fire_ring\FireRingEvent.java
 C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\Magic.java
-C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\spell\escape\EscapeEvent.java
+C:\Users\yuras\IdeaProjects\magic\src\main\java\tnt\org\magic\magic\item\wand\MasterWand\MasterWandEvent.java
