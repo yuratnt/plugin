@@ -15,7 +15,7 @@ public class FireRing {
     public static void init(){
         recipe();
     }
-    public static ItemStack fireRing = SpellCreate.createStaff(spell);
+    public static ItemStack fireRing = SpellCreate.createSpell(spell);
 
 
     private static void recipe() {

@@ -17,6 +17,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import tnt.org.magic.magic.item.inventory_filler.Filler;
 import tnt.org.magic.magic.item.wand.Wand;
+import tnt.org.magic.magic.item.wand.WandDeterminant;
 
 public class WandInventoryEvent implements Listener {
 
@@ -28,8 +29,7 @@ public class WandInventoryEvent implements Listener {
         if (event.getItem() == null) return;
 
         if ((action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) && player.isSneaking()) {
-
-            WandInventory.createInventory(WandInventory.wandDeterminant(event.getItem().getItemMeta()), player);
+            WandInventory.createInventory(WandDeterminant.wandDeterminant(event.getItem().getItemMeta()), player);
         }
     }
 
@@ -84,64 +84,34 @@ public class WandInventoryEvent implements Listener {
         Player player = (Player) event.getPlayer();
 
         if (wandName.equals(Wand.BEGIN_WAND.getName())) {
-            beginWand(inventory, player);
+            containerWand(inventory, player, Wand.BEGIN_WAND.getSlotCount(), 4);
         }
         else if (wandName.equals(Wand.ADVANCED_WAND.getName())) {
-            advancedWand(inventory, player);
+            containerWand(inventory, player, Wand.ADVANCED_WAND.getSlotCount(), 3);
         }
         else if (wandName.equals(Wand.MASTER_WAND.getName())) {
-            masterWand(inventory, player);
+            containerWand(inventory, player, Wand.MASTER_WAND.getSlotCount(), 2);
         }
     }
 
-    private void beginWand(Inventory inventory, Player player) {
-        if (inventory.getItem(4) == null) {
-            ItemMeta wand = player.getInventory().getItem(EquipmentSlot.HAND).getItemMeta();
-            wand.getPersistentDataContainer().set(NamespacedKey.fromString("slot_0"), PersistentDataType.STRING, "none");
-        } else {
-            if (inventory.getItem(4).getItemMeta().getPersistentDataContainer() == null) return;
-            if (inventory.getItem(4).getItemMeta().getPersistentDataContainer().get(NamespacedKey.fromString("type"), PersistentDataType.STRING) == null) return;
-
-            String spell = inventory.getItem(4).getItemMeta().getPersistentDataContainer().get(NamespacedKey.fromString("tag"), PersistentDataType.STRING);
-            ItemMeta wand = player.getInventory().getItem(EquipmentSlot.HAND).getItemMeta();
-            wand.getPersistentDataContainer().set(NamespacedKey.fromString("slot_0"), PersistentDataType.STRING, spell);
-        }
-    }
-
-    private void advancedWand(Inventory inventory, Player player) {
-        int slot = 3;
-        for (int i = 0; i != 2; i++) {
-            if (inventory.getItem(slot) == null) {
+    private void containerWand(Inventory inventory, Player player, int slot, int startFill) {
+        for (int i = 0; i != slot; i++) {
+            if (inventory.getItem(startFill) == null) {
                 ItemMeta wand = player.getInventory().getItem(EquipmentSlot.HAND).getItemMeta();
                 wand.getPersistentDataContainer().set(NamespacedKey.fromString("slot_" + i), PersistentDataType.STRING, "none");
-            } else {
-                if (inventory.getItem(slot).getItemMeta().getPersistentDataContainer() == null) return;
-                if (inventory.getItem(slot).getItemMeta().getPersistentDataContainer().get(NamespacedKey.fromString("type"), PersistentDataType.STRING) == null) return;
 
-                String spell = inventory.getItem(slot).getItemMeta().getPersistentDataContainer().get(NamespacedKey.fromString("tag"), PersistentDataType.STRING);
+                player.getInventory().getItem(EquipmentSlot.HAND).setItemMeta(wand);
+            }
+            else {
+                if (inventory.getItem(startFill).getItemMeta().getPersistentDataContainer().get(NamespacedKey.fromString("tag"), PersistentDataType.STRING) == null) return;
+
+                String spell = inventory.getItem(startFill).getItemMeta().getPersistentDataContainer().get(NamespacedKey.fromString("tag"), PersistentDataType.STRING);
                 ItemMeta wand = player.getInventory().getItem(EquipmentSlot.HAND).getItemMeta();
                 wand.getPersistentDataContainer().set(NamespacedKey.fromString("slot_" + i), PersistentDataType.STRING, spell);
-            }
-            slot++;
-        }
-    }
 
-    private void masterWand(Inventory inventory, Player player) {
-        int slot = 2;
-        for (int i = 0; i != 4; i++) {
-            if (inventory.getItem(slot) == null) {
-                ItemMeta wand = player.getInventory().getItem(EquipmentSlot.HAND).getItemMeta();
-                wand.getPersistentDataContainer().set(NamespacedKey.fromString("slot_" + i), PersistentDataType.STRING, "none");
-            } else {
-                if (inventory.getItem(slot).getItemMeta().getPersistentDataContainer() == null) return;
-                if (inventory.getItem(slot).getItemMeta().getPersistentDataContainer().get(NamespacedKey.fromString("type"), PersistentDataType.STRING) == null)
-                    return;
-
-                String spell = inventory.getItem(slot).getItemMeta().getPersistentDataContainer().get(NamespacedKey.fromString("tag"), PersistentDataType.STRING);
-                ItemMeta wand = player.getInventory().getItem(EquipmentSlot.HAND).getItemMeta();
-                wand.getPersistentDataContainer().set(NamespacedKey.fromString("slot_" + i), PersistentDataType.STRING, spell);
+                player.getInventory().getItem(EquipmentSlot.HAND).setItemMeta(wand);
             }
-            slot++;
+            startFill++;
         }
     }
 }

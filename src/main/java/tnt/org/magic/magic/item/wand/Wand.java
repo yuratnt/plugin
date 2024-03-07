@@ -8,8 +8,7 @@ public enum Wand {
             "Жезл начинающего мага",
             "Имеет 1 слот для заклинания",
             Material.STICK,
-            "bigin_wand",
-            "spell",
+            "begin_wand",
             1
     ),
 
@@ -18,7 +17,6 @@ public enum Wand {
             "Имеет 3 слотов для заклинаний",
             Material.STICK,
             "advanced_wand",
-            "spell",
             3
     ),
 
@@ -27,7 +25,6 @@ public enum Wand {
             "Имеет 5 слот для заклинаний",
             Material.STICK,
             "master_wand",
-            "spell",
             5
     );
 
@@ -35,16 +32,14 @@ public enum Wand {
     private String lore;
     private Material material;
     private String tag;
-    private String type;
     private int slotCount;
 
 
-    Wand(String name, String lore, Material material, String tag, String type, int slotCount) {
+    Wand(String name, String lore, Material material, String tag, int slotCount) {
         this.name = name;
         this.lore = lore;
         this.material = material;
         this.tag = tag;
-        this.type = type;
         this.slotCount = slotCount;
     }
 
@@ -74,14 +69,6 @@ public enum Wand {
     }
     public void setTag(String tag) {
         this.tag = tag;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public int getSlotCount() {

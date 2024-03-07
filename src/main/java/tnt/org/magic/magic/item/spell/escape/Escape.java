@@ -12,7 +12,7 @@ public class Escape {
 
     private static final Spell spell = Spell.BAT_STAFF;
 
-    public static ItemStack escape = SpellCreate.createStaff(spell);
+    public static ItemStack escape = SpellCreate.createSpell(spell);
 
     public static void init() {
         recipe();

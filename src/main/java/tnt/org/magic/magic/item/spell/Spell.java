@@ -8,19 +8,17 @@ public enum Spell {
             30,
             "§6§lОгненый жезл",
             "§7Поджигает врагов вокруг себя в радиусе 3 блоков",
-            Material.STICK,
-            "fire_ring",
-            "spell"
-            ),
+            Material.EMERALD,
+            "fire_ring"
+    ),
 
     BAT_STAFF(
             40,
             "§4§lВампирский посох",
             "§7Создаёт летучих мышей и накладывает: скорость 2, регенерацию 2 и невидимость",
-            Material.STICK,
-            "escape",
-            "spell"
-            );
+            Material.EMERALD,
+            "escape"
+    );
 
 
     private int mana;
@@ -29,7 +27,7 @@ public enum Spell {
     private Material material;
     private String tag;
 
-    Spell(int mana, String name, String lore, Material material, String tag, String spell) {
+    Spell(int mana, String name, String lore, Material material, String tag) {
         this.mana = mana;
         this.name = name;
         this.lore = lore;

@@ -14,6 +14,8 @@ public class WandCreate {
     public static ItemStack createWand(Wand wand) {
 
         ItemStack item = new ItemStack(wand.getMaterial(), 1);
+        item.setAmount(1);
+
         ItemMeta meta = item.getItemMeta();
 
         List<String> lore = new ArrayList<>();
@@ -24,7 +26,8 @@ public class WandCreate {
         meta.setLore(lore);
 
         meta.getPersistentDataContainer().set(NamespacedKey.fromString("tag"), PersistentDataType.STRING, wand.getTag());
-        meta.getPersistentDataContainer().set(NamespacedKey.fromString("select_slot"), PersistentDataType.STRING, "none");
+        meta.getPersistentDataContainer().set(NamespacedKey.fromString("select_slot"), PersistentDataType.INTEGER, 0);
+        meta.getPersistentDataContainer().set(NamespacedKey.fromString("wand"), PersistentDataType.STRING, "wand");
 
         for (int i = 0; i != wand.getSlotCount(); i++) {
             meta.getPersistentDataContainer().set(NamespacedKey.fromString("slot_" + i), PersistentDataType.STRING, "none");

@@ -32,7 +32,5 @@ public class BeginWand {
         shapedRecipe.setIngredient('S', Material.STICK);
 
         Bukkit.getServer().addRecipe(shapedRecipe);
-
     }
-
 }
