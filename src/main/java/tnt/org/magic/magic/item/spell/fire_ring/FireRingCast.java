@@ -3,6 +3,7 @@ package tnt.org.magic.magic.item.spell.fire_ring;
 import org.bukkit.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Mob;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -28,12 +29,12 @@ public class FireRingCast {
         for (int x = cx - radius; x <= cx + radius; x++) {
             for (int z = cz - radius; z <= cz + radius; z++) {
                 if ((cx - x) * (cx - x) + (cz - z) * (cz - z) <= radius * radius) {
-                    Location Location = new Location(playerWorld, x, cy, z);
+                    Location location = new Location(playerWorld, x, cy, z);
 
-                    Location.getWorld().spawnParticle(Particle.FLAME, Location, 10);
+                    location.getWorld().spawnParticle(Particle.FLAME, location, 10);
 
-                    for (Entity entity : Location.getWorld().getEntities()) {
-                        if (entity instanceof LivingEntity && Location.distance(entity.getLocation()) <= radius) {
+                    for (Entity entity : location.getWorld().getEntities()) {
+                        if (entity instanceof LivingEntity && location.distance(entity.getLocation()) <= radius) {
 
                             createFire(entity, player);
                         }
@@ -45,5 +46,9 @@ public class FireRingCast {
     private static void createFire(Entity entity, Player player) {
         if (entity.equals(player)) return;
         entity.setFireTicks(200);
+
+        if (entity instanceof Mob) {
+            ((Mob) entity).setTarget(player);
+        }
     }
 }

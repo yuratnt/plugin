@@ -14,6 +14,8 @@ import tnt.org.magic.magic.item.inventory_filler.Filler;
 import tnt.org.magic.magic.item.inventory_filler.FillerCreate;
 import tnt.org.magic.magic.item.spell.escape.Escape;
 import tnt.org.magic.magic.item.spell.fire_ring.FireRing;
+import tnt.org.magic.magic.item.spell.live_steal.LiveSteal;
+import tnt.org.magic.magic.item.spell.live_steal.LiveStealCast;
 import tnt.org.magic.magic.item.wand.Wand;
 
 
@@ -64,6 +66,9 @@ public class WandInventory {
                     break;
                 case "escape":
                     inventory.setItem(startFill, Escape.escape);
+                    break;
+                case "live_steal":
+                    inventory.setItem(startFill, LiveSteal.liveSteal);
                     break;
             }
             startFill++;

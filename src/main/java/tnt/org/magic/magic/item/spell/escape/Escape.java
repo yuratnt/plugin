@@ -23,14 +23,14 @@ public class Escape {
         ShapedRecipe shapedRecipe = new ShapedRecipe(NamespacedKey.minecraft(spell.getTag()), escape);
 
         shapedRecipe.shape(
-                " AG",
-                " NA",
-                "B  "
+                "WDW",
+                "NGN",
+                "WDW"
         );
-        shapedRecipe.setIngredient('A', Material.AMETHYST_SHARD);
+        shapedRecipe.setIngredient('W', Material.NETHER_WART);
         shapedRecipe.setIngredient('G', Material.GOLD_BLOCK);
         shapedRecipe.setIngredient('N', Material.NETHERITE_INGOT);
-        shapedRecipe.setIngredient('B', Material.BLAZE_ROD);
+        shapedRecipe.setIngredient('D', Material.GLOWSTONE_DUST);
 
         Bukkit.getServer().addRecipe(shapedRecipe);
     }

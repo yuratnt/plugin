@@ -23,12 +23,13 @@ public class FireRing {
         ShapedRecipe shapedRecipe = new ShapedRecipe(NamespacedKey.minecraft(spell.getTag()), fireRing);
 
         shapedRecipe.shape(
-                "  F",
-                " B ",
-                "B  "
+                "FBF",
+                "BSB",
+                "FBF"
         );
         shapedRecipe.setIngredient('F', Material.FIRE_CHARGE);
         shapedRecipe.setIngredient('B', Material.BLAZE_ROD);
+        shapedRecipe.setIngredient('S', Material.FLINT_AND_STEEL);
 
         Bukkit.getServer().addRecipe(shapedRecipe);
     }

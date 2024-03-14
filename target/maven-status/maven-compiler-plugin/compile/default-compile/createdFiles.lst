@@ -7,10 +7,12 @@ tnt\org\magic\magic\item\spell\escape\Escape.class
 tnt\org\magic\magic\item\spell\escape\EscapeCast.class
 tnt\org\magic\magic\item\spell\fire_ring\FireRingCast.class
 tnt\org\magic\magic\item\wand\MasterWand\MasterWand.class
+tnt\org\magic\magic\item\spell\live_steal\LiveStealCast.class
 tnt\org\magic\magic\item\wand\begin_wand\BeginWand.class
 tnt\org\magic\magic\item\wand\WandDeterminant.class
 tnt\org\magic\magic\item\wand\WandSelectSlot.class
 tnt\org\magic\magic\inventory\wand\WandInventory.class
+tnt\org\magic\magic\item\spell\live_steal\LiveSteal.class
 tnt\org\magic\magic\item\wand\advanced_wand\AdvancedWand.class
 tnt\org\magic\magic\item\spell\fire_ring\FireRing.class
 tnt\org\magic\magic\mechanic\mana\ManaEvent.class

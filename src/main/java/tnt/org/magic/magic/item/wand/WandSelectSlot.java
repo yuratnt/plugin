@@ -11,6 +11,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import tnt.org.magic.magic.item.spell.escape.EscapeCast;
 import tnt.org.magic.magic.item.spell.fire_ring.FireRingCast;
+import tnt.org.magic.magic.item.spell.live_steal.LiveSteal;
+import tnt.org.magic.magic.item.spell.live_steal.LiveStealCast;
 
 import java.awt.peer.LabelPeer;
 
@@ -29,7 +31,7 @@ public class WandSelectSlot implements Listener {
 
         Wand wand = WandDeterminant.wandDeterminant(meta);
 
-        if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+        if (event.getAction() == Action.LEFT_CLICK_BLOCK || event.getAction() == Action.LEFT_CLICK_AIR) {
             selectSlot(wand.getSlotCount(), meta, item);
         }
     }
@@ -42,7 +44,7 @@ public class WandSelectSlot implements Listener {
         ItemMeta meta = event.getItem().getItemMeta();
         if (meta == null) return;
 
-        if (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK) {
+        if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
             if (meta.getPersistentDataContainer().get(NamespacedKey.fromString("wand"), PersistentDataType.STRING) == null) return;
             if (meta.getPersistentDataContainer().get(NamespacedKey.fromString("tag"), PersistentDataType.STRING) == null) return;
 
@@ -61,6 +63,9 @@ public class WandSelectSlot implements Listener {
                     break;
                 case "escape":
                     EscapeCast.escapeCast(player);
+                    break;
+                case "live_steal":
+                    LiveStealCast.liveStealCast(player);
                     break;
             }
         }
