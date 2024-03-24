@@ -11,6 +11,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import tnt.org.magic.magic.item.spell.escape.EscapeCast;
 import tnt.org.magic.magic.item.spell.fire_ring.FireRingCast;
+import tnt.org.magic.magic.item.spell.frost_storm.FrostStorm;
+import tnt.org.magic.magic.item.spell.frost_storm.FrostStormCast;
 import tnt.org.magic.magic.item.spell.live_steal.LiveSteal;
 import tnt.org.magic.magic.item.spell.live_steal.LiveStealCast;
 
@@ -44,7 +46,7 @@ public class WandSelectSlot implements Listener {
         ItemMeta meta = event.getItem().getItemMeta();
         if (meta == null) return;
 
-        if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
+        if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR && !player.isSneaking()) {
             if (meta.getPersistentDataContainer().get(NamespacedKey.fromString("wand"), PersistentDataType.STRING) == null) return;
             if (meta.getPersistentDataContainer().get(NamespacedKey.fromString("tag"), PersistentDataType.STRING) == null) return;
 
@@ -66,6 +68,9 @@ public class WandSelectSlot implements Listener {
                     break;
                 case "live_steal":
                     LiveStealCast.liveStealCast(player);
+                    break;
+                case "frost_storm":
+                    FrostStormCast.frostStormCast(player);
                     break;
             }
         }

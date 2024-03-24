@@ -26,6 +26,14 @@ public enum Spell {
             "§7Забирает 2 сердца у вашего врага и отдаёт их вам",
             Material.EMERALD,
             "live_steal"
+    ),
+
+    FROST_STORM(
+            80,
+            "§f§lМорозная буря",
+            "§7Создаёт бурю вокруг вас, которая замедляет врагов",
+            Material.EMERALD,
+            "frost_storm"
     );
 
 

@@ -7,6 +7,7 @@ import tnt.org.magic.magic.item.spell.fire_ring.FireRing;
 import tnt.org.magic.magic.item.spell.escape.Escape;
 import tnt.org.magic.magic.inventory.wand.WandInventory;
 import tnt.org.magic.magic.inventory.wand.WandInventoryEvent;
+import tnt.org.magic.magic.item.spell.frost_storm.FrostStorm;
 import tnt.org.magic.magic.item.spell.live_steal.LiveSteal;
 import tnt.org.magic.magic.item.wand.MasterWand.MasterWand;
 import tnt.org.magic.magic.item.wand.WandSelectSlot;
@@ -36,6 +37,7 @@ public final class Magic extends JavaPlugin {
         FireRing.init();
         Escape.init();
         LiveSteal.init();
+        FrostStorm.init();
 
     }
 
