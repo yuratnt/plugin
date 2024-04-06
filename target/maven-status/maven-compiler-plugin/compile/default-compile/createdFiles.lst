@@ -1,4 +1,5 @@
 tnt\org\magic\magic\mechanic\mana\Mana.class
+tnt\org\magic\magic\item\spell\fire_ray\FireRayCast.class
 tnt\org\magic\magic\item\spell\escape\EscapeCast.class
 tnt\org\magic\magic\item\spell\fire_ring\FireRingCast.class
 tnt\org\magic\magic\item\wand\MasterWand\MasterWand.class
@@ -8,6 +9,7 @@ tnt\org\magic\magic\item\wand\WandSelectSlot.class
 tnt\org\magic\magic\item\spell\frost_storm\FrostStormCast.class
 tnt\org\magic\magic\item\spell\live_steal\LiveSteal.class
 tnt\org\magic\magic\item\spell\fire_ring\FireRing.class
+tnt\org\magic\magic\item\spell\heal\HealCast.class
 tnt\org\magic\magic\item\spell\frost_storm\FrostStormCast$1.class
 tnt\org\magic\magic\item\wand\WandCreate.class
 tnt\org\magic\magic\item\wand\Wand.class
@@ -21,7 +23,9 @@ tnt\org\magic\magic\item\inventory_filler\Filler.class
 tnt\org\magic\magic\Magic.class
 tnt\org\magic\magic\item\spell\escape\Escape.class
 tnt\org\magic\magic\item\spell\live_steal\LiveStealCast.class
+tnt\org\magic\magic\item\spell\fire_ray\FireRay.class
 tnt\org\magic\magic\inventory\wand\WandInventory.class
 tnt\org\magic\magic\item\spell\frost_storm\FrostStormCast$2.class
 tnt\org\magic\magic\item\wand\advanced_wand\AdvancedWand.class
+tnt\org\magic\magic\item\spell\heal\Heal.class
 tnt\org\magic\magic\mechanic\mana\ManaEvent.class

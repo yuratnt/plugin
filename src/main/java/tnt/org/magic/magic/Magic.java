@@ -2,12 +2,14 @@ package tnt.org.magic.magic;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import tnt.org.magic.magic.item.spell.fire_ray.FireRay;
 import tnt.org.magic.magic.item.spell.fire_ring.FireRing;
 
 import tnt.org.magic.magic.item.spell.escape.Escape;
 import tnt.org.magic.magic.inventory.wand.WandInventory;
 import tnt.org.magic.magic.inventory.wand.WandInventoryEvent;
 import tnt.org.magic.magic.item.spell.frost_storm.FrostStorm;
+import tnt.org.magic.magic.item.spell.heal.Heal;
 import tnt.org.magic.magic.item.spell.live_steal.LiveSteal;
 import tnt.org.magic.magic.item.wand.MasterWand.MasterWand;
 import tnt.org.magic.magic.item.wand.WandSelectSlot;
@@ -38,6 +40,8 @@ public final class Magic extends JavaPlugin {
         Escape.init();
         LiveSteal.init();
         FrostStorm.init();
+        Heal.init();
+        FireRay.init();
 
     }
 

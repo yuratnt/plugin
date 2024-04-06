@@ -10,9 +10,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import tnt.org.magic.magic.item.spell.escape.EscapeCast;
+import tnt.org.magic.magic.item.spell.fire_ray.FireRayCast;
 import tnt.org.magic.magic.item.spell.fire_ring.FireRingCast;
 import tnt.org.magic.magic.item.spell.frost_storm.FrostStorm;
 import tnt.org.magic.magic.item.spell.frost_storm.FrostStormCast;
+import tnt.org.magic.magic.item.spell.heal.Heal;
+import tnt.org.magic.magic.item.spell.heal.HealCast;
 import tnt.org.magic.magic.item.spell.live_steal.LiveSteal;
 import tnt.org.magic.magic.item.spell.live_steal.LiveStealCast;
 
@@ -71,6 +74,12 @@ public class WandSelectSlot implements Listener {
                     break;
                 case "frost_storm":
                     FrostStormCast.frostStormCast(player);
+                    break;
+                case "heal":
+                    HealCast.healCast(player);
+                    break;
+                case "fire_ray":
+                    FireRayCast.fireRay(player);
                     break;
             }
         }

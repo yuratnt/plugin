@@ -13,8 +13,10 @@ import org.bukkit.persistence.PersistentDataType;
 import tnt.org.magic.magic.item.inventory_filler.Filler;
 import tnt.org.magic.magic.item.inventory_filler.FillerCreate;
 import tnt.org.magic.magic.item.spell.escape.Escape;
+import tnt.org.magic.magic.item.spell.fire_ray.FireRay;
 import tnt.org.magic.magic.item.spell.fire_ring.FireRing;
 import tnt.org.magic.magic.item.spell.frost_storm.FrostStorm;
+import tnt.org.magic.magic.item.spell.heal.Heal;
 import tnt.org.magic.magic.item.spell.live_steal.LiveSteal;
 import tnt.org.magic.magic.item.spell.live_steal.LiveStealCast;
 import tnt.org.magic.magic.item.wand.Wand;
@@ -73,6 +75,12 @@ public class WandInventory {
                     break;
                 case "frost_storm":
                     inventory.setItem(startFill, FrostStorm.frostStorm);
+                    break;
+                case "heal":
+                    inventory.setItem(startFill, Heal.heal);
+                    break;
+                case "fire_ray":
+                    inventory.setItem(startFill, FireRay.fireRay);
                     break;
             }
             startFill++;
